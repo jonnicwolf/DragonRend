@@ -1,0 +1,23 @@
+{
+  "name": "DragonRend",
+  "version": "1.0.0",
+  "description": "## Guide your hero through dungeons and monsters to slay and slay the dragon!",
+  "main": "Dragonrend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joinpursuit/FSW-Text-Based-Adventure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joinpursuit/FSW-Text-Based-Adventure/issues"
+  },
+  "homepage": "https://github.com/joinpursuit/FSW-Text-Based-Adventure#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
