@@ -179,6 +179,7 @@ module.exports = {
     dmg,
     fight,
     enemyDmg,
+    nameInput,
     showDialogue,
     quitGame
 }

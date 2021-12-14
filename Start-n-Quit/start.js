@@ -28,7 +28,7 @@ const dialogues = {
   ],  
   pickNo: [
     "+========================================================================================+",
-    "+ You choose not to pick the beautiful dying flower but nuturture it instead!            +\n\n",
+    "+ You choose not to pick the beautiful dying flower but nurture it instead!            +\n\n",
     "+ Until one day...                                                                       +",
   ],
   pickYes: [
@@ -50,6 +50,7 @@ const startQuest = () => {
       }
       else {
         console.log(dialogues.pickNo[i])
+        console.log(`levelOne runs now`)
         levelOne()
       }
       // i === len

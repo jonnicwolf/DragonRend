@@ -1,4 +1,5 @@
-const nameInput = require("../../HeroName.js");
+// const nameInput = require("../../HeroName.js");
+const {nameInput} = require("../../CoreFunctions/coreFunctions.js")
 const {characterStats:{hero}} = require("../../Stats/characterStats-API.js");
 
 const dialogues = {
