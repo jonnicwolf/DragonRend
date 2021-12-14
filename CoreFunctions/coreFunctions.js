@@ -147,11 +147,13 @@ const showDialogue = (dialogue) => {
     const len = dialogue.length;
   
     const timer = setInterval(() => { 
-      console.log(dialogue[i]);
+      // console.log(dialogue[i]);
+      console.log(i)
         i++;
         i === len
           ? clearInterval(timer)
-          : null
+          // : console.log(dialogue[i]);
+          :null
     }, 250);
 };
 

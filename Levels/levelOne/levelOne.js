@@ -6,7 +6,7 @@ const {
 } = require("../../CoreFunctions/coreFunctions");
 
 const levelOne = () => {
-  // showDialogue(dialogues.opening) 
+  showDialogue(dialogues.opening) 
   
   
   // const rls1 = require("readline-sync");
