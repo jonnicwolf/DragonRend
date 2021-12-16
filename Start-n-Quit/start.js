@@ -1,10 +1,10 @@
 const { keyInYN } = require("readline-sync");
 const {
   levelOne,
-  classPick }= require('../Levels/levelOne/levelOne.js');
+  classPick} = require('../Levels/levelOne/levelOne.js');
 const {showDialogue} = require('../CoreFunctions/coreFunctions.js')
 const dialogues = {
-  start:  [
+  start: [
     "+=======================================================================================+",
     "+---------------------------------------------------------------------------------------+",
     "+ ============//                                     ========/                     __   +",
@@ -48,9 +48,9 @@ const startQuest = () => {
   if (!start) {
     const dialogueLength = dialogues.pickNo.length//3
     const timer = setInterval(() => {
-      if (i === dialogueLength){
-        levelOne(showDialogue,classPick)
+      if (i === dialogueLength){        
         clearInterval(timer);
+        // levelOne(showDialogue,classPick)
       }
         // levelOne(); } 
         else if (i === (dialogueLength-1)){
