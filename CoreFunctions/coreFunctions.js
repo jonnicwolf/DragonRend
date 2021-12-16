@@ -147,13 +147,17 @@ const showDialogue = (dialogue) => {
     const len = dialogue.length;
   
     const timer = setInterval(() => { 
-      // console.log(dialogue[i]);
-      console.log(i)
+      console.log(dialogue[i]);
+      // console.log(i)
         i++;
         i === len
           ? clearInterval(timer)
           // : console.log(dialogue[i]);
           :null
+        // if (i === len){
+        //   clearInterval(timer);
+        // }
+
     }, 250);
 };
 
@@ -166,7 +170,7 @@ const health = (passingValue, reward, risk) => {
       break;
     case roll < passingValue:
       console.log(`+--------------------------------------------------------------------------------------+`)
-      console.log(` Hero takes ${risk}🖤`);
+      console.log(`Hero takes ${risk}🖤`);
       hero.health =- risk;
       break;
     default: 

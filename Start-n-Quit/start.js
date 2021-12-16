@@ -39,38 +39,33 @@ const dialogues = {
 
 const startQuest = () => {
   const start = keyInYN('Do you pick the flower?')
+  // let i = 1
   let i = 0
 
   if (!start) {
-    const len = dialogues.pickNo.length
+    const dialogueLength = dialogues.pickNo.length//3
     const timer = setInterval(() => {
-      i++
-      if (i === len){
-        clearInterval(timer)
-      }
-      else {
+      if (i === dialogueLength){
+        clearInterval(timer);
+        ()=>{levelOne()}; } 
+        else if (i === dialogueLength-1){
+          setTimeout(()=>{console.log(dialogues.pickNo[i])}, 3000)
+        }
+      else { 
         console.log(dialogues.pickNo[i])
-        console.log(`levelOne runs now`)
-        levelOne()
-      }
-      // i === len
-      //   ? clearInterval(timer)
-      //   : console.log(dialogues.pickNo[i])
+        i++; }
     }, 250)}
+
   else {
     const len = dialogues.pickYes.length
     const timer = setInterval(() => {
       i++
       if (i === len){
         clearInterval(timer)
-      }
-      else {
+      } else {
         console.log(dialogues.pickYes[i])
         //trigger restart
       }
-      // i === len
-      //   ? clearInterval(timer)
-      //   : console.log(dialogues.pickYes[i])
     });
   };
 };
@@ -83,6 +78,7 @@ const showDialogue_start = () => {
 
   const timer = setInterval(() => { 
     console.log(dialogues.start[i]);
+    // console.log(`startQuest6`)
       i++;
       if (i === len){
         clearInterval(timer);
@@ -96,6 +92,7 @@ const start = () => {
   // showDialogue_start()
   // setTimeout(start_Quest, 250)  
   showDialogue_start() 
+  // console.log(`start dialogue`)
   // setTimeout(()=>{startQuest()}, 8000)  
 };
 

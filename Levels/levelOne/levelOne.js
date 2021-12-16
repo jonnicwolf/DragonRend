@@ -5,8 +5,9 @@ const {
   quitGame
 } = require("../../CoreFunctions/coreFunctions");
 
-const levelOne = () => {
+function levelOne () {
   showDialogue(dialogues.opening) 
+  // console.log(dialogues.opening)
   
   
   // const rls1 = require("readline-sync");
