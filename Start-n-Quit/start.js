@@ -46,10 +46,13 @@ const startQuest = () => {
     const dialogueLength = dialogues.pickNo.length//3
     const timer = setInterval(() => {
       if (i === dialogueLength){
+        levelOne()
         clearInterval(timer);
-        ()=>{levelOne()}; } 
-        else if (i === dialogueLength-1){
-          setTimeout(()=>{console.log(dialogues.pickNo[i])}, 3000)
+      }
+        // levelOne(); } 
+        else if (i === (dialogueLength-1)){
+          setTimeout(()=>{console.log(dialogues.pickNo[dialogues.pickNo.length-1])}, 500)
+          i++
         }
       else { 
         console.log(dialogues.pickNo[i])
