@@ -142,22 +142,17 @@ const quitGame = () => {
   }
 };
 
-const showDialogue = (dialogue) => {
+const showDialogue = (dialogue,callback, callback1) => {
     let i = 0;
-    const len = dialogue.length;
-  
+    const len = dialogue.length;  
     const timer = setInterval(() => { 
       console.log(dialogue[i]);
-      // console.log(i)
         i++;
-        i === len
-          ? clearInterval(timer)
-          // : console.log(dialogue[i]);
-          :null
-        // if (i === len){
-        //   clearInterval(timer);
-        // }
-
+        if (i === len){
+          clearInterval(timer)
+          callback()
+          // callback1()
+        }
     }, 250);
 };
 
@@ -177,8 +172,6 @@ const health = (passingValue, reward, risk) => {
       console.log(`Whoa something went really wrong here`);
   };
 };
-
-  
 
 module.exports = {
     dice,

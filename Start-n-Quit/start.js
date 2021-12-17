@@ -40,7 +40,7 @@ const dialogues = {
   ]  
 };
 
-const startQuest = () => {
+const startQuest = (lvl_1) => {
   const start = keyInYN('Do you pick the flower?')
   // let i = 1
   let i = 0
@@ -50,7 +50,7 @@ const startQuest = () => {
     const timer = setInterval(() => {
       if (i === dialogueLength){        
         clearInterval(timer);
-        // levelOne(showDialogue,classPick)
+        lvl_1(showDialogue,classPick)
       }
         // levelOne(); } 
         else if (i === (dialogueLength-1)){
@@ -81,14 +81,13 @@ const startQuest = () => {
 const showDialogue_start = () => {
   let i = 0;
   const len = dialogues.start.length;
-
   const timer = setInterval(() => { 
     console.log(dialogues.start[i]);
     // console.log(`startQuest6`)
       i++;
       if (i === len){
         clearInterval(timer);
-        startQuest()
+        startQuest(levelOne)
       }
       // i === len ? clearInterval(timer) : null
   }, 250);
