@@ -1,6 +1,4 @@
-const { 
-  keyInYN,
-  question} = require("readline-sync");
+const { keyInYN, question } = require("readline-sync");
 
 let nameInput = question("Enter your name: ");
 
@@ -60,7 +58,7 @@ const enemyDmg = (herostat, enemy) => {
   return d2 === 2 ? damage : 0;
 };
 
-//
+//fight algo
 const fight = (herostat, enemy, risk, experience) => {
   const victoryRes = [
       ` ||=====\ //=====+=     ======   ||=====\\  `,
@@ -142,17 +140,18 @@ const quitGame = () => {
   }
 };
 
-const showDialogue = (dialogue) => {
+const showDialogue = (arr) => {
   let i = 0;
-  const len = dialogue.length;  
+  const len = arr.length;  
   const timer = 
     setInterval(() => { 
-      console.log(dialogue[i]);
+      console.log(arr[i]);
         i++;
         if (i === len){
           clearInterval(timer)
         }
     }, 250);
+    return null;
 };
 
 const health = (passingValue, reward, risk) => {

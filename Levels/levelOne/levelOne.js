@@ -5,39 +5,44 @@ const {
   quitGame
 } = require("../../CoreFunctions/coreFunctions");
 
-function classPick (stageOne,showDialogue) {
-  let key = false;
+const classPicker =()=> {
+  const rls1 = require("readline-sync");
+    let classPick = ["Sword", "Wand", "Rifle"];  
+    let index = rls1.keyInSelect(classPick, "What weapon should I take?")
+    
+    switch (classPick[index]){
+      // case 0: 
+      case classPick[0]: 
+        // showDialogue(dialogues.classPick_sword)
+        // showDialogue(dialogues.classPick_sword)
+        showDialogue()
+        stageOne()
+        break;
+      case classPick[1]:
+        // showDialogue(dialogues.classPick_wand)
+        showDialogue(dialogues.classPick_wand)
+        stageOne();
+        break;
+      case classPick[2]:
+        // showDialogue(dialogues.classPick_rifle)
+        showDialogue(dialogues.classPick_rifle)
+        stageOne();
+        break;
+      default:
+        quitGame();
+    };
+}
+
+function classPick () {
+  let key;
   if (!key){
     showDialogue(dialogues.opening);
     key=true;
   }
-  // if (key){
-  //   const rls1 = require("readline-sync");
-  //   let classPick = ["Sword", "Wand", "Rifle"];  
-  //   let index = rls1.keyInSelect(classPick, "What weapon should I take?")
-    
-  //   switch (classPick[index]){
-  //     // case 0: 
-  //     case classPick[0]: 
-  //       // showDialogue(dialogues.classPick_sword)
-  //       // showDialogue(dialogues.classPick_sword)
-  //       showDialogue()
-  //       stageOne()
-  //       break;
-  //     case classPick[1]:
-  //       // showDialogue(dialogues.classPick_wand)
-  //       showDialogue(dialogues.classPick_wand)
-  //       stageOne();
-  //       break;
-  //     case classPick[2]:
-  //       // showDialogue(dialogues.classPick_rifle)
-  //       showDialogue(dialogues.classPick_rifle)
-  //       stageOne();
-  //       break;
-  //     default:
-  //       quitGame();
-  // };
-  // };
+  if (key){
+    classPicker();
+    key=false;
+  };
 };
 
 const stageOne = (showDialogue, lvl_1_2, lvl_1_1_2) => {
