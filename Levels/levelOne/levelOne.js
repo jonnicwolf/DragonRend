@@ -5,35 +5,40 @@ const {
   quitGame
 } = require("../../CoreFunctions/coreFunctions");
 
-function classPick (level_1_1,dialogGoesHere) {
-  dialogGoesHere(dialogues.opening);
+function classPick (stageOne,showDialogue) {
+  showDialogue(dialogues.opening);
   const rls1 = require("readline-sync");
   let classPick = ["Sword", "Wand", "Rifle"];  
   let index = rls1.keyInSelect(classPick, "What weapon should I take?")
   
   switch (classPick[index]){
-    case 0: 
-      showDialogue(dialogues.classPick_sword)
-      level_1_1()
+    // case 0: 
+    case classPick[0]: 
+      // showDialogue(dialogues.classPick_sword)
+      // showDialogue(dialogues.classPick_sword)
+      showDialogue()
+      stageOne()
       break;
-    case 1:
+    case classPick[1]:
+      // showDialogue(dialogues.classPick_wand)
       showDialogue(dialogues.classPick_wand)
-      level_1_1();
+      stageOne();
       break;
-    case 2:
+    case classPick[2]:
+      // showDialogue(dialogues.classPick_rifle)
       showDialogue(dialogues.classPick_rifle)
-      level_1_1();
+      stageOne();
       break;
     default:
       quitGame();
   };
 };
 
-const level_1_1 = (showDialogue, lvl_1_2, lvl_1_1_2) => {
-  showDialogue(dialogues.level_1_1.opening)
+const stageOne = (showDialogue, lvl_1_2, lvl_1_1_2) => {
+  showDialogue(dialogues.stageOne.opening)
   let help = keyInYN("+ Qaspiel => ~Psssssssst pssst pssssssst~                                     <=+\n");
   if (help === true) {
-    showDialogue(dialogues.level_1_1.help_isTrue)
+    showDialogue(dialogues.stageOne.help_isTrue)
     let lift = keyInYN(`+ Do you let  Qaspiel assist you down, ${nameInput}? +\n`);
     if (lift === true) {
       console.log("+ Qaspiel hops on your shoulders and flaps their little wings as you decend.           +");
@@ -45,11 +50,10 @@ const level_1_1 = (showDialogue, lvl_1_2, lvl_1_1_2) => {
       console.log("+ Qaspiel => Ahh tough luck buddy...                                                   +");
       constitutionRoll(2, 2);
       console.log("+ Your health is now " + heroStat[0] + "!         + ");
-      ();
     }
   }
   else {
-    showDialogue(dialogues.level_1_1.help_isFalse)
+    showDialogue(dialogues.stageOne.help_isFalse)
     lvl_1_1_2();
   }
 };
@@ -79,7 +83,7 @@ const stageThree = () => {
 }
 
 function levelOne (showDialogue, classPick) {  
-  return classPick(showDialogue);
+  classPick(stageOne,showDialogue);
 } 
 
 module.exports = {
