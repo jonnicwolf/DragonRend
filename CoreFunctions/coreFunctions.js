@@ -142,16 +142,15 @@ const quitGame = () => {
   }
 };
 
-const showDialogue = (dialogue,callback, callback1) => {
-    let i = 0;
-    const len = dialogue.length;  
-    const timer = setInterval(() => { 
+const showDialogue = (dialogue) => {
+  let i = 0;
+  const len = dialogue.length;  
+  const timer = 
+    setInterval(() => { 
       console.log(dialogue[i]);
         i++;
         if (i === len){
           clearInterval(timer)
-          callback()
-          // callback1()
         }
     }, 250);
 };
