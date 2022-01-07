@@ -45,8 +45,9 @@ function classPick () {
   };
 };
 
-const stageOne = (showDialogue, lvl_1_2, lvl_1_1_2) => {
-  showDialogue(dialogues.stageOne.opening)
+const stageOne = (lvl_1_2, lvl_1_1_2) => {
+  const stageOneStart = dialogues.stageOne.opening
+  showDialogue(stageOneStart)
   // let help = keyInYN("+ Qaspiel => ~Psssssssst pssst pssssssst~                                     <=+\n");
   // if (help === true) {
   //   showDialogue(dialogues.stageOne.help_isTrue)
