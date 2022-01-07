@@ -6,25 +6,21 @@ const {
 } = require("../../CoreFunctions/coreFunctions");
 
 const classPicker =()=> {
-  const rls1 = require("readline-sync");
+  const rls = require("readline-sync");
     let classPick = ["Sword", "Wand", "Rifle"];  
-    let index = rls1.keyInSelect(classPick, "What weapon should I take?")
+    let index = rls.keyInSelect(classPick, "What weapon should I take?")
     
     switch (classPick[index]){
-      // case 0: 
+      
       case classPick[0]: 
-        // showDialogue(dialogues.classPick_sword)
-        // showDialogue(dialogues.classPick_sword)
         showDialogue(dialogues.classPick_sword)
         stageOne()
         break;
       case classPick[1]:
-        // showDialogue(dialogues.classPick_wand)
         showDialogue(dialogues.classPick_wand)
         stageOne();
         break;
       case classPick[2]:
-        // showDialogue(dialogues.classPick_rifle)
         showDialogue(dialogues.classPick_rifle)
         stageOne();
         break;
@@ -37,12 +33,15 @@ function classPick () {
   let key;
   if (!key){
     showDialogue(dialogues.opening);
+    console.log('key is true')
     key=true;
   }
   if (key){
-    classPicker();
+    // classPicker();
+    console.log(`key is false`)
     key=false;
   };
+  classPicker()
 };
 
 const stageOne = (lvl_1_2, lvl_1_1_2) => {
