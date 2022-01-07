@@ -15,7 +15,7 @@ const classPicker =()=> {
       case classPick[0]: 
         // showDialogue(dialogues.classPick_sword)
         // showDialogue(dialogues.classPick_sword)
-        showDialogue()
+        showDialogue(dialogues.classPick_sword)
         stageOne()
         break;
       case classPick[1]:
