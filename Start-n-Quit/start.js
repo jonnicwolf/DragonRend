@@ -52,26 +52,20 @@ const startQuest = (lvl_1) => {
         clearInterval(timer);
         lvl_1(showDialogue,classPick)
       }
-        // levelOne(); } 
-        else if (i === (dialogueLength-1)){
+      else if (i === (dialogueLength-1)){
           setTimeout(()=>{console.log(dialogues.pickNo[dialogues.pickNo.length-1])}, 500)
           i++
         }
       else { 
         console.log(dialogues.pickNo[i])
         i++; }
-    }, 250)}
-
+    }, 250) }
   else {
     const len = dialogues.pickYes.length
     const timer = setInterval(() => {
       i++
-      if (i === len){
-        clearInterval(timer)
-      } else {
-        console.log(dialogues.pickYes[i])
-        //trigger restart
-      }
+      if (i === len){ clearInterval(timer) } 
+      else { console.log(dialogues.pickYes[i]) }//trigger restart          
     });
   };
 };
@@ -82,14 +76,12 @@ const showDialogue_start = () => {
   let i = 0;
   const len = dialogues.start.length;
   const timer = setInterval(() => { 
-    console.log(dialogues.start[i]);
-    // console.log(`startQuest6`)
+    console.log(dialogues.start[i]);    
       i++;
       if (i === len){
         clearInterval(timer);
         startQuest(levelOne)
-      }
-      // i === len ? clearInterval(timer) : null
+      };
   }, 250);
 };
 
@@ -100,7 +92,5 @@ const start = () => {
   // console.log(`start dialogue`)
   // setTimeout(()=>{startQuest()}, 8000)  
 };
-
-// start();
 
 module.exports = {start};
