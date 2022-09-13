@@ -5,35 +5,39 @@ const {
   quitGame
 } = require("../../CoreFunctions/coreFunctions");
 
-const startLevelOne = new Promise ((showDialogue)=>{
-  showDialogue(dialogues.opening)
-})
-
-function classPick(){
-  const rls = require("readline-sync");
-  let classPick = ["Sword", "Wand", "Rifle"];  
-  let index = rls.keyInSelect(classPick, "What weapon should I take?")
-  switch (classPick[index]){  
-    case classPick[0]: 
-      showDialogue(dialogues.classPick_sword)
-      stageOne()
-      break;
-    case classPick[1]:
-      showDialogue(dialogues.classPick_wand)
-      stageOne();
-      break;
-    case classPick[2]:
-      showDialogue(dialogues.classPick_rifle)
-      stageOne();
-      break;
-    default:
-      quitGame();
+function levelOne(){
+  
 }
 
-};
-startLevelOne
-  .then(classPick)
-  .catch('something broke')
+// const startLevelOne = new Promise ((showDialogue)=>{
+//   showDialogue(dialogues.opening)
+// })
+
+// function classPick(){
+//   const rls = require("readline-sync");
+//   let classPick = ["Sword", "Wand", "Rifle"];  
+//   let index = rls.keyInSelect(classPick, "What weapon should I take?")
+//   switch (classPick[index]){  
+//     case classPick[0]: 
+//       showDialogue(dialogues.classPick_sword)
+//       stageOne()
+//       break;
+//     case classPick[1]:
+//       showDialogue(dialogues.classPick_wand)
+//       stageOne();
+//       break;
+//     case classPick[2]:
+//       showDialogue(dialogues.classPick_rifle)
+//       stageOne();
+//       break;
+//     default:
+//       quitGame();
+// }
+
+// };
+// startLevelOne
+//   .then(classPick)
+//   .catch('something broke')
 
 
 // const classPicker =()=> {
